@@ -3,7 +3,7 @@ import numpy as np
 import face_recognition
 
 # Elon musk 이미지를 test와 원본을 저장.
-imgElon = face_recognition.load_image_file("examples/elon.jpg")
+imgElon = face_recognition.load_image_file("examples/son.jpg")
 imgElon = cv2.cvtColor(imgElon,cv2.COLOR_BGR2RGB)
 imgTest = face_recognition.load_image_file("examples/elon_test.jpg")
 imgTest = cv2.cvtColor(imgTest,cv2.COLOR_BGR2RGB)
@@ -12,6 +12,10 @@ imgTest = cv2.cvtColor(imgTest,cv2.COLOR_BGR2RGB)
 facLoc = face_recognition.face_locations(imgElon)[0]
 encodeElon = face_recognition.face_encodings(imgElon)[0]
 cv2.rectangle(imgElon, (facLoc[3], facLoc[0]), (facLoc[1], facLoc[2]), (255,0,255),2)
+
+jangun = face_recognition.load_image_file("examples/jangun.JPG")
+print(face_recognition.face_locations(jangun))
+print(face_recognition.face_locations(imgElon))
 
 facLocTest = face_recognition.face_locations(imgTest)[0]
 encodeTest = face_recognition.face_encodings(imgTest)[0]
